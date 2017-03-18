@@ -43,5 +43,17 @@ model {
         include 'p027.cpp'
       }
     }
+    p014(NativeExecutableSpec) {
+      sources.cpp.source {
+        srcDir '.'
+        include 'p014.cpp'
+      }
+    }
+    p015(NativeExecutableSpec) {
+      sources.cpp.source {
+        srcDir '.'
+        include 'p014.cpp'
+      }
+    }
   }
 }
