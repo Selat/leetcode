@@ -1,0 +1,23 @@
+apply plugin: 'cpp'
+
+model {
+  binaries {
+    all {
+      cppCompiler.args '-std=c++14'
+    }
+  }
+  components {
+    p001(NativeExecutableSpec) {
+      sources.cpp.source {
+        srcDir '.'
+        include 'p001.cpp'
+      }
+    }
+    p002(NativeExecutableSpec) {
+      sources.cpp.source {
+        srcDir '.'
+        include 'p002.cpp'
+      }
+    }
+  }
+}
