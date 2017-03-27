@@ -68,7 +68,7 @@ def main():
     service = discovery.build('sheets', 'v4', http=http,
                               discoveryServiceUrl=discoveryUrl)
 
-    rangeName = 'Days!B6:I7'
+    rangeName = 'Days!B6:J7'
     result = service.spreadsheets().values().get(
         spreadsheetId=local_secrets.SPREADSHEET_ID, range=rangeName).execute()
     values = result.get('values', [])
@@ -89,7 +89,7 @@ def main():
 
     print('Updating the table...', end='')
     rowid = (today - MARATHON_START_DATE).days + 8
-    rangeTodayTasks = 'Days!B{rowid}:I{rowid}'.format(rowid=rowid)
+    rangeTodayTasks = 'Days!B{rowid}:J{rowid}'.format(rowid=rowid)
     values = [
         solved_today_tasks
     ]
